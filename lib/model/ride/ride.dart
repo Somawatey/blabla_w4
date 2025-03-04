@@ -1,4 +1,5 @@
 import 'package:blabla_w4/model/ride/locations.dart';
+import 'package:blabla_w4/service/rides_service.dart';
 import '../../utils/date_time_util.dart';
 import '../user/user.dart';
 
@@ -23,6 +24,8 @@ class Ride {
 
   final int availableSeats;
   final double pricePerSeat;
+  final RidesFilter ridesFilter;
+  final Duration duration;
 
   RideStatus status = RideStatus.created;
 
@@ -36,6 +39,8 @@ class Ride {
     required this.driver,
     required this.availableSeats,
     required this.pricePerSeat,
+    required this.ridesFilter,
+    required this.duration,
   });
 
   void addPassenger(User passenger) {
